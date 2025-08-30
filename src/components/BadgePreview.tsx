@@ -22,12 +22,12 @@ export default function BadgePreview({ profile, name, photo }: BadgePreviewProps
       className="relative w-full max-w-sm mx-auto"
     >
       {/* Badge Card */}
-      <div className="relative bg-gradient-to-br from-dark via-gray-900 to-primary-900 p-8 rounded-3xl shadow-2xl backdrop-blur-sm border border-primary-500/20">
+      <div className="relative bg-linear-to-br from-dark via-gray-900 to-primary-900 p-8 rounded-3xl shadow-2xl backdrop-blur-xs border border-primary-500/20">
         {/* Background Pattern */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-500/5 via-transparent to-primary-500/10 rounded-3xl" />
+        <div className="absolute inset-0 bg-linear-to-br from-primary-500/5 via-transparent to-primary-500/10 rounded-3xl" />
         
         {/* Glow Effect */}
-        <div className="absolute -inset-1 bg-gradient-to-r from-primary-500/30 to-primary-600/30 rounded-3xl blur opacity-30" />
+        <div className="absolute -inset-1 bg-linear-to-r from-primary-500/30 to-primary-600/30 rounded-3xl blur-sm opacity-30" />
         
         {/* Content */}
         <div className="relative space-y-6">
@@ -36,7 +36,7 @@ export default function BadgePreview({ profile, name, photo }: BadgePreviewProps
             <h3 className="text-xs font-medium text-primary-300 uppercase tracking-wider mb-1">
               StackID
             </h3>
-            <div className="w-12 h-px bg-gradient-to-r from-transparent via-primary-400 to-transparent mx-auto" />
+            <div className="w-12 h-px bg-linear-to-r from-transparent via-primary-400 to-transparent mx-auto" />
           </div>
 
           {/* Photo */}
@@ -54,7 +54,7 @@ export default function BadgePreview({ profile, name, photo }: BadgePreviewProps
                   className="w-full h-full object-cover"
                 />
               ) : (
-                <div className="w-full h-full bg-gradient-to-br from-primary-400 to-primary-600 flex items-center justify-center text-white text-2xl font-bold">
+                <div className="w-full h-full bg-linear-to-br from-primary-400 to-primary-600 flex items-center justify-center text-white text-2xl font-bold">
                   {initials}
                 </div>
               )}
@@ -84,7 +84,7 @@ export default function BadgePreview({ profile, name, photo }: BadgePreviewProps
             className="space-y-3"
           >
             <div className="flex justify-center">
-              <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-500/20 text-primary-200 border border-primary-500/30 backdrop-blur-sm">
+              <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-500/20 text-primary-200 border border-primary-500/30 backdrop-blur-xs">
                 {profile.cargo}
               </span>
             </div>
@@ -106,7 +106,7 @@ export default function BadgePreview({ profile, name, photo }: BadgePreviewProps
             transition={{ delay: 0.5 }}
             className="text-center pt-2"
           >
-            <div className="w-8 h-px bg-gradient-to-r from-transparent via-primary-400/50 to-transparent mx-auto mb-2" />
+            <div className="w-8 h-px bg-linear-to-r from-transparent via-primary-400/50 to-transparent mx-auto mb-2" />
             <p className="text-xs text-primary-300/70 font-medium">
               #StackID
             </p>

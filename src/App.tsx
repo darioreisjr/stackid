@@ -49,7 +49,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-primary-50 dark:from-dark dark:via-gray-900 dark:to-primary-950 transition-colors duration-300">
+    <div className="min-h-screen bg-linear-to-br from-gray-50 via-white to-primary-50 dark:from-dark dark:via-gray-900 dark:to-primary-950 transition-colors duration-300">
       {/* Header */}
       <header className="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200/50 dark:border-gray-700/50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
@@ -58,7 +58,7 @@ function App() {
             animate={{ opacity: 1, x: 0 }}
             className="flex items-center space-x-3"
           >
-            <div className="p-2 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl shadow-lg">
+            <div className="p-2 bg-linear-to-br from-primary-500 to-primary-600 rounded-xl shadow-lg">
               <Sparkles className="w-6 h-6 text-white" />
             </div>
             <div>
@@ -80,7 +80,7 @@ function App() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="mb-8 p-6 bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl border border-gray-200/50 dark:border-gray-700/50"
+            className="mb-8 p-6 bg-white/70 dark:bg-gray-800/70 backdrop-blur-xs rounded-2xl border border-gray-200/50 dark:border-gray-700/50"
           >
             <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
               ⚡ Exemplos Rápidos
@@ -112,7 +112,7 @@ function App() {
               animate={{ opacity: 1, x: 0 }}
               className="space-y-6"
             >
-              <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl border border-gray-200/50 dark:border-gray-700/50 p-6 shadow-xl">
+              <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-xs rounded-2xl border border-gray-200/50 dark:border-gray-700/50 p-6 shadow-xl">
                 <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-6 flex items-center space-x-2">
                   <User className="w-5 h-5 text-primary-500" />
                   <span>Seus Dados</span>
@@ -135,7 +135,7 @@ function App() {
                       value={name}
                       onChange={(e) => handleNameChange(e.target.value)}
                       placeholder="Deixe vazio para usar o codinome gerado"
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm transition-all duration-200 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 hover:border-primary-300"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 bg-white/50 dark:bg-gray-800/50 backdrop-blur-xs transition-all duration-200 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 hover:border-primary-300"
                     />
                   </div>
 
@@ -144,7 +144,7 @@ function App() {
                   <motion.button
                     onClick={handleGenerateBadge}
                     disabled={!birthdate}
-                    className="w-full flex items-center justify-center space-x-2 bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 disabled:from-gray-300 disabled:to-gray-400 text-white font-semibold py-4 px-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 disabled:cursor-not-allowed"
+                    className="w-full flex items-center justify-center space-x-2 bg-linear-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 disabled:from-gray-300 disabled:to-gray-400 text-white font-semibold py-4 px-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 disabled:cursor-not-allowed"
                     whileHover={{ y: -2, scale: !birthdate ? 1 : 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
@@ -174,7 +174,7 @@ function App() {
                     <BadgePreview profile={profile} name={name} photo={photo} />
 
                     {/* Editable Name */}
-                    <div className="download-exclude bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl border border-gray-200/50 dark:border-gray-700/50 p-4">
+                    <div className="download-exclude bg-white/70 dark:bg-gray-800/70 backdrop-blur-xs rounded-2xl border border-gray-200/50 dark:border-gray-700/50 p-4">
                       <div className="flex items-center space-x-3">
                         <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
                           Nome:
@@ -200,7 +200,7 @@ function App() {
                       </div>
                     </div>
 
-                    <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl border border-gray-200/50 dark:border-gray-700/50 p-6">
+                    <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-xs rounded-2xl border border-gray-200/50 dark:border-gray-700/50 p-6">
                       <ShareButtons profile={profile} name={name} />
                     </div>
                   </motion.div>
@@ -210,7 +210,7 @@ function App() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className="bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl border-2 border-dashed border-gray-300 dark:border-gray-600 p-12 text-center"
+                    className="bg-white/50 dark:bg-gray-800/50 backdrop-blur-xs rounded-2xl border-2 border-dashed border-gray-300 dark:border-gray-600 p-12 text-center"
                   >
                     <div className="mx-auto w-16 h-16 bg-gray-100 dark:bg-gray-700 rounded-full flex items-center justify-center mb-4">
                       <Sparkles className="w-8 h-8 text-gray-400" />

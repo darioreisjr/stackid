@@ -24,7 +24,7 @@ export default function ThemeToggle() {
   return (
     <motion.button
       onClick={toggleTheme}
-      className="relative p-2 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all duration-200"
+      className="relative p-2 rounded-lg bg-white/10 backdrop-blur-xs border border-white/20 hover:bg-white/20 transition-all duration-200"
       whileHover={{ y: -2, scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
       aria-label={isDark ? 'Ativar tema claro' : 'Ativar tema escuro'}

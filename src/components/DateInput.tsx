@@ -36,7 +36,7 @@ export default function DateInput({ value, onChange, error }: DateInputProps) {
           onChange={handleInputChange}
           placeholder="DD/MM/AAAA"
           maxLength={10}
-          className={`w-full pl-10 pr-4 py-3 rounded-xl border bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm transition-all duration-200 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 ${
+          className={`w-full pl-10 pr-4 py-3 rounded-xl border bg-white/50 dark:bg-gray-800/50 backdrop-blur-xs transition-all duration-200 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 ${
             error 
               ? 'border-red-300 dark:border-red-600' 
               : 'border-gray-200 dark:border-gray-600 hover:border-primary-300'

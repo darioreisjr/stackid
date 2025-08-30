@@ -1,3 +1,74 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+/* Custom theme configuration - migrated from tailwind.config.js */
+@theme {
+  /* Custom colors */
+  --color-primary: #662D91;
+  --color-primary-50: #f3f0f9;
+  --color-primary-100: #e9e2f3;
+  --color-primary-200: #d6c8e8;
+  --color-primary-300: #bba3d7;
+  --color-primary-400: #9b75c2;
+  --color-primary-500: #7d4cac;
+  --color-primary-600: #662D91;
+  --color-primary-700: #542477;
+  --color-primary-800: #471e63;
+  --color-primary-900: #3d1a52;
+  --color-primary-950: #2a1138;
+  
+  --color-dark: #0B0B0B;
+  --color-light: #FFFFFF;
+
+  /* Font family */
+  --font-family-sans: Inter, ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+
+  /* Custom animations */
+  --animate-fade-in: fadeIn 0.5s ease-out;
+  --animate-scale-in: scaleIn 0.3s ease-out;
+  --animate-float: float 3s ease-in-out infinite;
+}
+
+/* Custom keyframe animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Custom utilities */
+@utility fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+@utility scale-in {
+  animation: scaleIn 0.3s ease-out;
+}
+
+@utility float {
+  animation: float 3s ease-in-out infinite;
+}
