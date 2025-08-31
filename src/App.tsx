@@ -7,14 +7,22 @@ import BadgePreview from './components/BadgePreview';
 import ShareButtons from './components/ShareButtons';
 import ThemeToggle from './components/ThemeToggle';
 import { fromBirthdate, TechProfile } from './lib/generate';
+import WelcomeScreen from './components/WelcomeScreen';
+import GithubStep from './components/GithubStep';
+
+type Step = 'welcome' | 'github' | 'form';
 
 function App() {
   const [birthdate, setBirthdate] = useState('');
   const [name, setName] = useState('');
-  const [photo, setPhoto] = useState<File | null>(null);
+  const [photo, setPhoto] = useState<File | string | null>(null);
   const [profile, setProfile] = useState<TechProfile | null>(null);
   const [error, setError] = useState('');
   const [isEditingName, setIsEditingName] = useState(false);
+  const [step, setStep] = useState<Step>('welcome');
+  const [githubUsername, setGithubUsername] = useState('');
+  const [githubError, setGithubError] = useState('');
+
 
   // Example seeds for quick testing
   const exampleSeeds = [
@@ -47,6 +55,48 @@ function App() {
   const handleNameChange = (newName: string) => {
     setName(newName);
   };
+
+  const handleWelcomeSelect = (option: 'github' | 'no-github') => {
+    if (option === 'github') {
+      setStep('github');
+    } else {
+      setStep('form');
+    }
+  };
+
+  const handleGithubSubmit = async (username: string) => {
+    if (!username) {
+        setGithubError('Por favor, insira seu nome de usuário do GitHub.');
+        return;
+    }
+    setGithubError('');
+    try {
+        const response = await fetch(`https://api.github.com/users/${username}`);
+        if (response.ok) {
+            const data = await response.json();
+            setPhoto(data.avatar_url); // Set the photo to the avatar URL
+            setGithubUsername(data.login);
+            setName(data.name || data.login);
+            setStep('form');
+        } else {
+            setGithubError('Usuário não encontrado.');
+            throw new Error('User not found');
+        }
+    } catch (error) {
+        setGithubError('Erro ao buscar usuário. Tente novamente.');
+        throw error;
+    }
+  };
+
+
+  if (step === 'welcome') {
+    return <WelcomeScreen onSelect={handleWelcomeSelect} />;
+  }
+
+  if (step === 'github') {
+    return <GithubStep onUsernameSubmit={handleGithubSubmit} />;
+  }
+
 
   return (
     <div className="min-h-screen bg-linear-to-br from-gray-50 via-white to-primary-50 dark:from-dark dark:via-gray-900 dark:to-primary-950 transition-colors duration-300">
@@ -139,7 +189,7 @@ function App() {
                     />
                   </div>
 
-                  <PhotoUploader photo={photo} onPhotoChange={setPhoto} />
+                  {!githubUsername && <PhotoUploader photo={photo} onPhotoChange={setPhoto} />}
 
                   <motion.button
                     onClick={handleGenerateBadge}
@@ -213,7 +263,11 @@ function App() {
                     className="bg-white/50 dark:bg-gray-800/50 backdrop-blur-xs rounded-2xl border-2 border-dashed border-gray-300 dark:border-gray-600 p-12 text-center"
                   >
                     <div className="mx-auto w-16 h-16 bg-gray-100 dark:bg-gray-700 rounded-full flex items-center justify-center mb-4">
-                      <Sparkles className="w-8 h-8 text-gray-400" />
+                       {photo && typeof photo === 'string' ? (
+                        <img src={photo} alt={githubUsername} className="w-16 h-16 rounded-full" />
+                    ) : (
+                        <Sparkles className="w-8 h-8 text-gray-400" />
+                    )}
                     </div>
                     <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-2">
                       Seu Crachá Tech aparecerá aqui
