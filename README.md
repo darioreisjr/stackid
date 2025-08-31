@@ -1,7 +1,3 @@
-Com certeza\! Aqui está o README completo para o projeto StackID, formatado em Markdown.
-
------
-
 # StackID - O seu Crachá Tecnológico do Destino
 
 Bem-vindo ao StackID, uma aplicação web divertida e interativa que gera uma identidade tecnológica ("crachá tech") com base na sua data de nascimento. Descubra qual seria o seu cargo, a sua área de atuação e a sua tecnologia de eleição no mundo da tecnologia, como se fosse um "horóscopo para developers".
