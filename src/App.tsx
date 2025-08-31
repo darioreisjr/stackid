@@ -23,7 +23,6 @@ function App() {
   const [isEditingName, setIsEditingName] = useState(false);
   const [step, setStep] = useState<Step>('landing');
   const [githubUsername, setGithubUsername] = useState('');
-  const [githubError, setGithubError] = useState('');
 
   const exampleSeeds = [
     { date: '15/08/1995', name: 'Ana Silva', desc: 'Product Owner de IA Generativa • Ruby' },
@@ -69,25 +68,35 @@ function App() {
   };
 
   const handleGithubSubmit = async (username: string) => {
-    if (!username) {
-      setGithubError('Por favor, insira seu nome de usuário do GitHub.');
-      return;
-    }
-    setGithubError('');
     try {
       const response = await fetch(`https://api.github.com/users/${username}`);
-      if (response.ok) {
-        const data = await response.json();
-        setPhoto(data.avatar_url);
-        setGithubUsername(data.login);
-        setName(data.name || data.login);
-        setStep('form');
-      } else {
-        setGithubError('Usuário não encontrado.');
-        throw new Error('User not found');
+      
+      if (!response.ok) {
+        if (response.status === 404) {
+          throw new Error('Usuário não encontrado no GitHub.');
+        } else if (response.status === 403) {
+          throw new Error('Limite de requisições excedido. Tente novamente em alguns minutos.');
+        } else {
+          throw new Error('Erro ao buscar usuário. Tente novamente.');
+        }
       }
+
+      const userData = await response.json();
+      
+      // Validação adicional dos dados recebidos
+      if (!userData.login) {
+        throw new Error('Dados do usuário inválidos.');
+      }
+
+      // Define os dados do usuário
+      setPhoto(userData.avatar_url);
+      setGithubUsername(userData.login);
+      setName(userData.name || userData.login);
+      setStep('form');
+
     } catch (error) {
-      setGithubError('Erro ao buscar usuário. Tente novamente.');
+      console.error('Erro na busca do usuário GitHub:', error);
+      // Re-throw para que o GithubStep possa tratar
       throw error;
     }
   };
@@ -127,7 +136,23 @@ function App() {
                 </p>
               </div>
             </motion.div>
-            <ThemeToggle />
+            <div className="flex items-center space-x-4">
+              {githubUsername && (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="flex items-center space-x-2 text-sm text-gray-600 dark:text-gray-400"
+                >
+                  <div className="w-6 h-6 rounded-full overflow-hidden">
+                    {photo && typeof photo === 'string' && (
+                      <img src={photo} alt={githubUsername} className="w-full h-full object-cover" />
+                    )}
+                  </div>
+                  <span>@{githubUsername}</span>
+                </motion.div>
+              )}
+              <ThemeToggle />
+            </div>
           </div>
         </header>
 
@@ -184,14 +209,14 @@ function App() {
 
                     <div className="space-y-2">
                       <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
-                        Seu Nome (opcional)
+                        Seu Nome {githubUsername ? '(do GitHub)' : '(opcional)'}
                       </label>
                       <input
                         id="name"
                         type="text"
                         value={name}
                         onChange={(e) => handleNameChange(e.target.value)}
-                        placeholder="Deixe vazio para usar o codinome gerado"
+                        placeholder={githubUsername ? "Nome do GitHub" : "Deixe vazio para usar o codinome gerado"}
                         className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 bg-white/50 dark:bg-gray-800/50 backdrop-blur-xs transition-all duration-200 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 hover:border-primary-300"
                       />
                     </div>
@@ -279,7 +304,10 @@ function App() {
                         Seu Crachá Tech aparecerá aqui
                       </h3>
                       <p className="text-gray-600 dark:text-gray-400">
-                        Preencha sua data de nascimento e clique em "Gerar Crachá Tech"
+                        {githubUsername 
+                          ? `Olá @${githubUsername}! Preencha sua data de nascimento e clique em "Gerar Crachá Tech"`
+                          : 'Preencha sua data de nascimento e clique em "Gerar Crachá Tech"'
+                        }
                       </p>
                     </motion.div>
                   )}
