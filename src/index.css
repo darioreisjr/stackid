@@ -26,6 +26,7 @@
   --animate-fade-in: fadeIn 0.5s ease-out;
   --animate-scale-in: scaleIn 0.3s ease-out;
   --animate-float: float 3s ease-in-out infinite;
+  --animate-background-pan: backgroundPan 15s linear infinite;
 }
 
 /* Custom keyframe animations */
@@ -60,15 +61,21 @@
   }
 }
 
+@keyframes backgroundPan {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 /* Custom utilities */
-@utility fade-in {
-  animation: fadeIn 0.5s ease-out;
-}
-
-@utility scale-in {
-  animation: scaleIn 0.3s ease-out;
-}
-
-@utility float {
-  animation: float 3s ease-in-out infinite;
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-500 to-primary-400;
+  }
 }

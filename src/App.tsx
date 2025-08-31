@@ -9,8 +9,9 @@ import ThemeToggle from './components/ThemeToggle';
 import { fromBirthdate, TechProfile } from './lib/generate';
 import WelcomeScreen from './components/WelcomeScreen';
 import GithubStep from './components/GithubStep';
+import LandingPage from './components/LandingPage'; // Importe o novo componente
 
-type Step = 'welcome' | 'github' | 'form';
+type Step = 'landing' | 'welcome' | 'github' | 'form';
 
 function App() {
   const [birthdate, setBirthdate] = useState('');
@@ -19,7 +20,7 @@ function App() {
   const [profile, setProfile] = useState<TechProfile | null>(null);
   const [error, setError] = useState('');
   const [isEditingName, setIsEditingName] = useState(false);
-  const [step, setStep] = useState<Step>('welcome');
+  const [step, setStep] = useState<Step>('landing'); // Comece com a página de apresentação
   const [githubUsername, setGithubUsername] = useState('');
   const [githubError, setGithubError] = useState('');
 
@@ -55,6 +56,10 @@ function App() {
   const handleNameChange = (newName: string) => {
     setName(newName);
   };
+  
+  const handleStartApp = () => {
+    setStep('welcome');
+  };
 
   const handleWelcomeSelect = (option: 'github' | 'no-github') => {
     if (option === 'github') {
@@ -88,6 +93,10 @@ function App() {
     }
   };
 
+
+  if (step === 'landing') {
+    return <LandingPage onStart={handleStartApp} />;
+  }
 
   if (step === 'welcome') {
     return <WelcomeScreen onSelect={handleWelcomeSelect} />;
