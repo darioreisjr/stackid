@@ -76,25 +76,16 @@ export default function BadgePreview({ profile, name, photo }: BadgePreviewProps
             </h2>
           </motion.div>
 
-          {/* Badges */}
+          {/* Badge Contínua - Cargo + Área + Tech */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="space-y-3"
+            className="flex justify-center"
           >
-            <div className="flex justify-center">
-              <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-500/20 text-primary-200 border border-primary-500/30 backdrop-blur-xs">
-                {profile.cargo}
-              </span>
-            </div>
-            
-            <div className="flex justify-center space-x-2">
-              <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-primary-400/15 text-primary-300 border border-primary-400/25">
-                {profile.area}
-              </span>
-              <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-primary-400/15 text-primary-300 border border-primary-400/25">
-                {profile.tech}
+            <div className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-primary-500/20 text-primary-200 border border-primary-500/30 backdrop-blur-xs text-center">
+              <span>
+                {profile.cargo} de {profile.area} • {profile.tech}
               </span>
             </div>
           </motion.div>
