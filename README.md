@@ -1,108 +1,285 @@
-# StackID - O seu Crachá Tecnológico do Destino
+# StackID
 
-Bem-vindo ao StackID, uma aplicação web divertida e interativa que gera uma identidade tecnológica ("crachá tech") com base na sua data de nascimento. Descubra qual seria o seu cargo, a sua área de atuação e a sua tecnologia de eleição no mundo da tecnologia, como se fosse um "horóscopo para developers".
+<div align="center">
+  <img src="https://img.shields.io/badge/React-18.3.1-61dafb?style=for-the-badge&logo=react" alt="React">
+  <img src="https://img.shields.io/badge/TypeScript-5.5.3-3178c6?style=for-the-badge&logo=typescript" alt="TypeScript">
+  <img src="https://img.shields.io/badge/Vite-5.4.2-646cff?style=for-the-badge&logo=vite" alt="Vite">
+  <img src="https://img.shields.io/badge/TailwindCSS-4.1.12-06b6d4?style=for-the-badge&logo=tailwindcss" alt="Tailwind">
+</div>
 
-Este projeto foi criado como uma ferramenta lúdica para a comunidade de tecnologia, ideal para partilhar nas redes sociais, quebrar o gelo em eventos ou simplesmente para se divertir com amigos e colegas de trabalho.
+<div align="center">
+  <h3>🚀 Gere seu crachá tecnológico baseado na sua data de nascimento</h3>
+  <p>Como um horóscopo para devs, mas com mais café e menos Mercúrio retrógrado ☕</p>
+  
+  <a href="#demo">Demo</a> •
+  <a href="#funcionalidades">Funcionalidades</a> •
+  <a href="#instalação">Instalação</a> •
+  <a href="#como-usar">Como Usar</a> •
+  <a href="#contribuindo">Contribuindo</a>
+</div>
 
-## 🚀 O que é o StackID?
+---
 
-Já imaginou se a sua carreira em tecnologia estivesse escrita nas estrelas (ou, neste caso, no seu dia de nascimento)? O StackID responde a essa pergunta de uma forma criativa e bem-humorada. A aplicação utiliza a sua data de nascimento para gerar um perfil tecnológico único, composto por:
+## 📖 Sobre o Projeto
 
-  * **Cargo**: Determinado pelo seu **mês** de nascimento.
-  * **Área**: Determinada pelo seu **dia** de nascimento.
-  * **Tecnologia**: Determinada pelo **último dígito do seu ano** de nascimento.
+O **StackID** é uma aplicação web divertida e interativa que gera uma identidade tecnológica ("crachá tech") personalizada com base na sua data de nascimento. É como se fosse um "horóscopo para developers" - uma ferramenta lúdica para a comunidade de tecnologia.
 
-> **Exemplo**: Alguém nascido em agosto de 1998 seria um "**Product Owner** de **Web3** que jura amor eterno ao **TypeScript**".
+### 🎯 Como Funciona
 
-## ✨ Como usar?
+- **Cargo**: Determinado pelo **mês** de nascimento
+- **Área de Atuação**: Determinada pelo **dia** de nascimento  
+- **Tecnologia Favorita**: Determinada pelo **último dígito do ano** de nascimento
 
-O StackID foi concebido para ser simples e intuitivo. Em apenas alguns passos, pode gerar e partilhar o seu crachá:
+**Exemplo**: Uma pessoa nascida em `15/08/1995` seria:
+> **"Product Owner de IA Generativa que jura amor eterno ao Ruby"**
 
-1.  **Aceda à aplicação**: Comece por visitar o site do StackID.
-2.  **Escolha o seu método de autenticação**: Pode optar por usar a sua conta do GitHub para importar automaticamente a sua foto de perfil ou prosseguir manualmente.
-3.  **Insira a sua data de nascimento**: No formato DD/MM/AAAA.
-4.  **Adicione o seu nome (opcional)**: Se deixar este campo em branco, a aplicação gera um "codinome" divertido para si.
-5.  **Carregue uma foto (opcional)**: Se não usar a foto do GitHub, pode carregar uma imagem à sua escolha. Caso contrário, será gerado um avatar com as suas iniciais.
-6.  **Gere o seu Crachá**: Clique no botão "Gerar Crachá Tech" e veja a magia acontecer\!
-7.  **Partilhe com o mundo**: Após a geração, pode descarregar o seu crachá como uma imagem PNG ou partilhá-lo diretamente nas suas redes sociais, como LinkedIn, WhatsApp e X (antigo Twitter).
+## ✨ Funcionalidades
 
-## 🤔 Porque usar o StackID?
+### 🎨 Interface Moderna
+- **Design Responsivo**: Funciona perfeitamente em mobile, tablet e desktop
+- **Dark/Light Mode**: Tema escuro e claro com transição suave
+- **Animações Fluidas**: Powered by Framer Motion
+- **Efeitos de Partículas**: Background interativo com tsParticles
 
-Para além de ser uma ferramenta divertida, o StackID pode ser útil em várias situações:
+### 🔧 Geração de Crachá
+- **Algoritmo Determinístico**: Baseado em data de nascimento
+- **Codinome Automático**: Geração inteligente de apelidos tech
+- **Avatar Personalizado**: Upload de foto ou avatar com iniciais
+- **Integração GitHub**: Import automático da foto de perfil
 
-  * **Networking com humor**: Uma forma criativa de iniciar conversas em eventos e redes sociais.
-  * **Quebra-gelo**: Pode ser um tópico de conversa descontraído em entrevistas de emprego ou reuniões de equipa.
-  * **Portfólio e competências técnicas**: Para recrutadores, este projeto demonstra competências em desenvolvimento front-end, design de UI/UX e implementação de funcionalidades interativas.
-  * **Diversão garantida**: Uma forma leve de se conectar com a comunidade e descobrir o seu "alter ego" no mundo da tecnologia.
+### 📤 Compartilhamento
+- **Download PNG**: Exportação em alta qualidade com fundo transparente
+- **Compartilhamento Social**: LinkedIn, WhatsApp, Twitter/X
+- **Link Personalizável**: URLs únicas para cada crachá
+- **Copy to Clipboard**: Compartilhamento rápido
 
-## 🌟 Funcionalidades Principais
+## 🛠️ Stack Tecnológica
 
-  * **Geração de Perfil Tecnológico**: Cria um cargo, área e tecnologia com base na data de nascimento.
-  * **Integração com GitHub**: Permite a utilização da foto de perfil do GitHub para uma experiência mais personalizada.
-  * **Upload de Foto**: Suporte para carregar uma foto a partir do seu dispositivo.
-  * **Geração de Avatar**: Cria um avatar com as iniciais do utilizador caso não seja fornecida uma foto.
-  * **Pré-visualização em Tempo Real**: Veja como o seu crachá ficará antes de o partilhar.
-  * **Edição de Nome**: Altere o nome no crachá a qualquer momento.
-  * **Partilha Social**: Botões para partilhar facilmente no LinkedIn, WhatsApp, X e copiar o link.
-  * **Download em PNG**: Exporte o seu crachá como uma imagem de alta qualidade, com fundo transparente.
-  * **Tema Claro e Escuro (Dark Mode)**: Interface adaptável às suas preferências visuais.
-  * **Design Responsivo**: Totalmente funcional em dispositivos móveis, tablets e desktops.
+### Frontend
+- **⚛️ React 18** - Interface de usuário
+- **📘 TypeScript** - Tipagem estática
+- **⚡ Vite** - Build tool moderna e rápida
+- **🎨 Tailwind CSS 4** - Framework CSS utility-first
+- **✨ Framer Motion** - Animações fluidas
+- **🎭 Lucide React** - Ícones SVG modernos
 
-## 🛠️ Tecnologias Utilizadas
+### Bibliotecas Especializadas
+- **📷 html-to-image** - Conversão DOM para PNG
+- **✨ tsParticles** - Efeitos de partículas interativas
+- **🔧 ESLint** - Linting e qualidade de código
 
-Este projeto foi construído com tecnologias modernas de desenvolvimento web, focadas em desempenho, interatividade e uma excelente experiência de utilizador.
+## 🚀 Instalação
 
-### Front-end
+### Pré-requisitos
+- **Node.js** >= 18.0.0
+- **pnpm** (recomendado) ou npm/yarn
 
-  * **React**: Biblioteca principal para a construção da interface de utilizador.
-  * **Vite**: Ferramenta de build extremamente rápida para o desenvolvimento front-end.
-  * **TypeScript**: Para um código mais robusto e com tipagem estática.
-  * **Tailwind CSS**: Framework CSS para um design rápido e personalizável.
-  * **Framer Motion**: Para animações fluidas e interativas.
-  * **Lucide React**: Biblioteca de ícones open-source.
-  * **html-to-image**: Para a funcionalidade de download do crachá em PNG.
-  * **tsparticles**: Para os efeitos de partículas na página inicial.
+### Setup Local
 
-### Ferramentas de Desenvolvimento
+```bash
+# 1. Clone o repositório
+git clone https://github.com/darioreisjr/stackid.git
+cd stackid
 
-  * **ESLint**: Para a análise estática do código e manutenção da qualidade.
-  * **pnpm**: Gestor de pacotes rápido e eficiente.
+# 2. Instale as dependências
+pnpm install
 
-## 💻 Como Executar o Projeto Localmente
+# 3. Inicie o servidor de desenvolvimento
+pnpm dev
 
-Se é um developer e quer explorar o código ou contribuir, siga os passos abaixo para configurar o ambiente de desenvolvimento:
+# 4. Acesse no navegador
+open http://localhost:5173
+```
 
-1.  **Clone o repositório**:
+### Scripts Disponíveis
 
-    ```bash
-    git clone https://github.com/darioreisjr/stackid.git
-    cd stackid
-    ```
+```bash
+pnpm dev      # Servidor de desenvolvimento
+pnpm build    # Build para produção
+pnpm preview  # Preview da build
+pnpm lint     # Análise de código
+```
 
-2.  **Instale as dependências**:
-    Recomenda-se o uso do `pnpm`.
+## 💡 Como Usar
 
-    ```bash
-    pnpm install
-    ```
+### Para Usuários
 
-3.  **Execute o servidor de desenvolvimento**:
+1. **🌐 Acesse a aplicação**
+2. **🔗 Conecte com GitHub** (opcional) - para importar sua foto automaticamente
+3. **📅 Insira sua data de nascimento** no formato DD/MM/AAAA
+4. **👤 Adicione seu nome** (opcional) - ou deixe a IA criar um codinome
+5. **📸 Faça upload de uma foto** (opcional) - ou use avatar com iniciais
+6. **✨ Clique em "Gerar Crachá Tech"**
+7. **📤 Baixe ou compartilhe** seu crachá nas redes sociais
 
-    ```bash
-    pnpm dev
-    ```
+### Exemplos Rápidos
 
-4.  **Abra no seu navegador**:
-    A aplicação estará disponível em `http://localhost:5173`.
+A aplicação inclui exemplos pré-configurados para teste rápido:
 
-## 📄 Licença
+- **Ana Silva** (15/08/1995) → Product Owner de IA Generativa • Ruby
+- **João Santos** (03/12/1990) → Data Scientist de Games • Java  
+- **Maria Costa** (28/06/1988) → Scrum Master de DevRel • TypeScript
 
-Este projeto é de código aberto e está disponível para diversão e portfólio.
+## 📁 Estrutura do Projeto
 
-## 👨‍💻 Contacto
+```
+src/
+├── components/           # Componentes React
+│   ├── BadgePreview.tsx     # Visualização do crachá
+│   ├── DateInput.tsx        # Input de data formatado
+│   ├── FooterArea.tsx       # Rodapé da aplicação  
+│   ├── GithubStep.tsx       # Integração GitHub
+│   ├── LandingPage.tsx      # Página inicial
+│   ├── PhotoUploader.tsx    # Upload de fotos
+│   ├── ShareButtons.tsx     # Botões de compartilhamento
+│   ├── ThemeToggle.tsx      # Alternador de tema
+│   └── WelcomeScreen.tsx    # Tela de boas-vindas
+├── lib/                  # Lógica de negócio
+│   ├── download.ts          # Função de download PNG
+│   ├── generate.ts          # Algoritmo de geração
+│   └── mappings.ts          # Mapeamentos cargo/área/tech
+├── App.tsx               # Componente principal
+├── main.tsx              # Entry point
+└── index.css             # Estilos globais
+```
 
-Este projeto foi criado por **Dario Reis**. Conecte-se comigo nas redes sociais:
+## 🎨 Design System
 
-  * **GitHub**: [@darioreisjr](https://github.com/darioreisjr)
-  * **LinkedIn**: [in/darioreisjr](https://www.linkedin.com/in/darioreisjr/)
-  * **Instagram**: [@darioreisjr](https://www.instagram.com/darioreisjr)
+### Cores Principais
+- **Primary**: `#662D91` (Roxo principal)
+- **Dark**: `#0B0B0B` (Tema escuro)
+- **Light**: `#FFFFFF` (Tema claro)
+
+### Tipografia
+- **Fonte**: Inter (Google Fonts)
+- **Weights**: 400, 500, 600, 700
+
+## 🤔 Por que Usar?
+
+### 🌐 **Networking Divertido**
+Quebra o gelo em eventos, LinkedIn e redes sociais com uma abordagem única e memorável.
+
+### 💼 **Diferencial Profissional** 
+Demonstra criatividade e senso de humor - qualidades valorizadas no mercado tech.
+
+### 🎯 **Portfólio Técnico**
+Para desenvolvedores, mostra competências em:
+- **Frontend Moderno**: React, TypeScript, Tailwind
+- **UX/UI Design**: Animações, responsividade, acessibilidade  
+- **Integração de APIs**: GitHub API, Web APIs
+- **Performance**: Otimizações de build e runtime
+
+### 🎉 **Diversão Garantida**
+É como um teste do BuzzFeed, mas para a galera tech!
+
+## 🌟 Casos de Uso
+
+- **🤝 Networking**: Compartilhe nas redes sociais profissionais
+- **🎤 Apresentações**: Use como quebra-gelo em talks e palestras
+- **👥 Team Building**: Descubram os "perfis tech" da equipe
+- **🎯 Recrutamento**: Ferramenta criativa para RH e recrutadores
+- **📚 Portfólio**: Demonstração de skills técnicas e criatividade
+
+## 🚀 Deploy
+
+### Vercel (Recomendado)
+
+```bash
+# 1. Instale a CLI da Vercel
+npm i -g vercel
+
+# 2. Faça deploy
+vercel
+
+# 3. Configure domínio personalizado (opcional)
+vercel --prod
+```
+
+### Outras Plataformas
+- **Netlify**: Funciona out-of-the-box
+- **GitHub Pages**: Adicione workflow de deploy
+- **Cloudflare Pages**: Configure build commands
+
+## 🤝 Contribuindo
+
+Contribuições são sempre bem-vindas! Siga os passos:
+
+### 1️⃣ Setup do Ambiente
+```bash
+git clone https://github.com/darioreisjr/stackid.git
+cd stackid
+pnpm install
+```
+
+### 2️⃣ Crie uma Branch
+```bash
+git checkout -b feature/nova-funcionalidade
+```
+
+### 3️⃣ Commit suas Mudanças
+```bash
+git commit -m "feat: adiciona nova funcionalidade"
+```
+
+### 4️⃣ Abra um Pull Request
+- Descreva as mudanças claramente
+- Inclua screenshots se aplicável
+- Aguarde o review
+
+### 💡 Como Contribuir
+
+- **🐛 Bug Reports**: Abra uma issue detalhada
+- **✨ Novas Features**: Discuta primeiro em uma issue
+- **📝 Documentação**: Melhorias sempre bem-vindas
+- **🎨 Design**: Sugestões de UI/UX
+- **🌐 Traduções**: Outros idiomas
+
+### Tipos de Contribuição
+- Novos mapeamentos de cargo/área/tecnologia
+- Melhorias de performance
+- Acessibilidade (a11y)
+- Testes automatizados
+- Otimizações de SEO
+
+## 📊 Roadmap
+
+### 🔜 Próximas Features
+- [ ] **🌍 Internacionalização** (i18n)
+- [ ] **🧪 Modo Personalizado** (mapeamentos próprios)
+- [ ] **📊 Analytics** de crachás gerados
+- [ ] **🎨 Temas Customizáveis**
+- [ ] **📱 PWA** (Progressive Web App)
+- [ ] **🔗 API Pública** para integração
+
+### 💭 Ideias Futuras
+- [ ] **🏆 Ranking** dos crachás mais populares
+- [ ] **👥 Modo Equipe** (múltiplos crachás)
+- [ ] **🎮 Achievements** e badges especiais
+- [ ] **📧 Newsletter** com estatísticas
+
+## ⚖️ Licença
+
+Este projeto é de **código aberto** e foi criado para **diversão e portfólio**.
+
+### Uso Permitido
+- ✅ Uso pessoal e comercial
+- ✅ Modificação e distribuição
+- ✅ Uso em portfólios
+- ✅ Contribuições são bem-vindas
+
+### Atribuição
+Se usar este projeto como base, uma menção ao autor original seria apreciada 😊
+
+## 👨‍💻 Autor
+
+**Dario Reis**
+- 🌐 **GitHub**: [@darioreisjr](https://github.com/darioreisjr)
+- 💼 **LinkedIn**: [@darioreisjr](https://www.linkedin.com/in/darioreisjr/)
+- 📸 **Instagram**: [@darioreisjr](https://www.instagram.com/darioreisjr)
+
+---
+
+<div align="center">
+  <p>Feito com ❤️ e muito ☕ por <a href="https://github.com/darioreisjr">Dario Reis</a></p>
+  <p><strong>Descubra seu destino tech! 🚀</strong></p>
+</div>
